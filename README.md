@@ -1,3 +1,21 @@
+⚠️ This is a fork that serves as the block explorer an EVM-based Nomos Sovereign Rollup. It includes minor customizations and fixes to better suit this particular use case.
+
+### Running
+
+1. Install project dependencies
+2. Run a Postgres database. A docker-based works:
+```docker run --name postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres -p 5432:5432 -d postgres```
+3. Apply migrations:
+```PGPASSWORD=postgres PGUSER=postgres ETHEREUM_JSONRPC_HTTP_URL=http://localhost:8545 MIX_ENV=dev mix do ecto.create, ecto.migrate```
+4. Run the server: 
+```PGPASSWORD=postgres PGUSER=postgres ETHEREUM_JSONRPC_HTTP_URL=http://localhost:8545 MIX_ENV=dev mix phx.server```
+
+---
+
+### 📄 Original README Below
+
+---
+
 <h1 align="center">Blockscout</h1>
 <p align="center">Blockchain Explorer for inspecting and analyzing EVM Chains.</p>
 <div align="center">
